@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "author": "Achmad Zainun Qurthubi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": 133, "left": 36, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -125.01, "left": 3.73, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 122.71,
+      "left": 156.86,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 167.15,
+      "left": 96,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 196.41,
+      "left": -160.53,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "led1:A", "bb1:15t.c", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:14t.c", "", [ "$bb" ] ],
+    [ "uno:GND.1", "bb1:14t.a", "black", [ "v0" ] ],
+    [ "bb1:12t.e", "bb1:15t.e", "green", [ "v0" ] ],
+    [ "uno:13", "bb1:6t.a", "green", [ "v213.07", "h-36.04" ] ],
+    [ "r1:1", "bb1:6t.d", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:12t.d", "", [ "$bb" ] ],
+    [ "uno:GND.2", "ldr1:GND", "black", [ "v0" ] ],
+    [ "uno:12", "ldr1:AO", "green", [ "v0" ] ],
+    [ "uno:5V", "ldr1:VCC", "red", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
